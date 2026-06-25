@@ -3,7 +3,7 @@
 // (play.google.com/apps/testing/com.northkraken.tranzfr) once it exists —
 // every CTA on the site reads from here, so one edit updates them all.
 export const TESTER_SIGNUP_URL =
-  "mailto:hi@northkraken.studio?subject=Quiero%20ser%20tester%20de%20Tranzfr";
+  "mailto:hello@tranzfr.com?subject=Quiero%20ser%20tester%20de%20Tranzfr";
 
 // Flip to true once the app is live on Google Play, so all the "Get it on
 // Google Play" buttons switch back from the beta-tester CTA automatically.

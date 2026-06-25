@@ -111,7 +111,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2.5 text-xs text-gray-500">
               <a href="/privacy.html" className="hover:text-[#208AEF] transition-colors">{t("footer.privacy")}</a>
               <a href="/terms.html" className="hover:text-[#208AEF] transition-colors">{t("footer.terms")}</a>
-              <a href="mailto:hi@northkraken.studio" className="hover:text-[#208AEF] transition-colors">{language === "es" ? "Contacto" : "Contact"}</a>
+              <a href="mailto:hello@tranzfr.com" className="hover:text-[#208AEF] transition-colors">{language === "es" ? "Contacto" : "Contact"}</a>
             </div>
           </div>
         </div>
