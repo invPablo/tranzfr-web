@@ -2,7 +2,7 @@ export const translations = {
   es: {
     beta: {
       message: "Estamos en fase beta",
-      cta: "Únete como tester →",
+      cta: "Descargar la beta →",
     },
     nav: {
       features: "Características",
@@ -167,7 +167,7 @@ export const translations = {
   en: {
     beta: {
       message: "We're in beta",
-      cta: "Join as a tester →",
+      cta: "Download the beta →",
     },
     nav: {
       features: "Features",

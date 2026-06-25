@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X, Download } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-import { IS_APP_PUBLISHED, getTesterSignupUrl } from "@/constants/links";
+import { IS_APP_PUBLISHED, PLAY_STORE_URL } from "@/constants/links";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -97,7 +97,9 @@ export default function Header() {
 
           {/* Download / Beta CTA Button */}
           <a
-            href={IS_APP_PUBLISHED ? "#download" : getTesterSignupUrl(language)}
+            href={IS_APP_PUBLISHED ? "#download" : PLAY_STORE_URL}
+            target={IS_APP_PUBLISHED ? undefined : "_blank"}
+            rel={IS_APP_PUBLISHED ? undefined : "noopener noreferrer"}
             className="inline-flex items-center gap-1.5 px-4.5 py-2 text-xs font-bold text-white bg-[#208AEF] hover:bg-[#1c7cd6] rounded-full transition-all duration-300 shadow-md shadow-sky-500/10 cursor-pointer"
           >
             <Download size={13} />
@@ -173,7 +175,9 @@ export default function Header() {
             {t("nav.faq")}
           </a>
           <a
-            href={IS_APP_PUBLISHED ? "#download" : getTesterSignupUrl(language)}
+            href={IS_APP_PUBLISHED ? "#download" : PLAY_STORE_URL}
+            target={IS_APP_PUBLISHED ? undefined : "_blank"}
+            rel={IS_APP_PUBLISHED ? undefined : "noopener noreferrer"}
             onClick={() => setMobileMenuOpen(false)}
             className="mt-4 flex items-center justify-center gap-2 w-full py-3.5 bg-[#208AEF] rounded-xl text-white font-semibold shadow-lg shadow-sky-500/10 hover:opacity-90 transition-opacity"
           >
