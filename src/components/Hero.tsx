@@ -3,6 +3,7 @@
 import { ShieldCheck, Zap } from "lucide-react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import { IS_APP_PUBLISHED, TESTER_SIGNUP_URL } from "@/constants/links";
 
 export default function Hero() {
   const { language, t } = useLanguage();
@@ -12,7 +13,7 @@ export default function Hero() {
     : "/GetItOnGooglePlay_Badge_Web_color_English.png";
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-white">
+    <section className="relative pt-40 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-white">
       {/* Decorative light blurred background blobs */}
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-sky-100/50 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-emerald-50/50 blur-[130px] pointer-events-none" />
@@ -45,27 +46,36 @@ export default function Hero() {
               {t("hero.subtitle")}
             </p>
 
-            {/* Google Play-Only Download Badges */}
+            {/* Google Play Badge (once published) / Beta Tester CTA (for now) */}
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-10">
-              <a
-                href="#download"
-                className="relative block w-52 h-[60px] transition-all hover:scale-[1.03] active:scale-[0.98] drop-shadow-sm cursor-pointer"
-              >
-                <Image
-                  src={badgeSrc}
-                  alt="Consíguelo en Google Play / Get it on Google Play"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </a>
+              {IS_APP_PUBLISHED ? (
+                <a
+                  href="#download"
+                  className="relative block w-52 h-[60px] transition-all hover:scale-[1.03] active:scale-[0.98] drop-shadow-sm cursor-pointer"
+                >
+                  <Image
+                    src={badgeSrc}
+                    alt="Consíguelo en Google Play / Get it on Google Play"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </a>
+              ) : (
+                <a
+                  href={TESTER_SIGNUP_URL}
+                  className="inline-flex items-center justify-center px-7 py-4 rounded-2xl bg-[#208AEF] hover:bg-[#1c7cd6] text-white font-bold text-sm shadow-lg shadow-sky-500/20 transition-all hover:scale-[1.03] active:scale-[0.98]"
+                >
+                  {t("beta.cta")}
+                </a>
+              )}
             </div>
 
             {/* Trust info */}
             <div className="flex flex-col sm:flex-row items-center gap-6 text-gray-500 text-sm">
               <div className="flex items-center gap-2">
                 <ShieldCheck size={18} className="text-[#00966F]" />
-                <span>{t("hero.compliance")}</span>
+                <span>{IS_APP_PUBLISHED ? t("hero.compliance") : t("hero.comingSoon")}</span>
               </div>
             </div>
             

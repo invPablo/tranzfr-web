@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X, Download } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { IS_APP_PUBLISHED, TESTER_SIGNUP_URL } from "@/constants/links";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,7 +21,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-9 sm:top-10 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "glass-panel py-3 shadow-md shadow-gray-150/10"
           : "bg-transparent py-5"
@@ -94,13 +95,13 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Download Button */}
+          {/* Download / Beta CTA Button */}
           <a
-            href="#download"
+            href={IS_APP_PUBLISHED ? "#download" : TESTER_SIGNUP_URL}
             className="inline-flex items-center gap-1.5 px-4.5 py-2 text-xs font-bold text-white bg-[#208AEF] hover:bg-[#1c7cd6] rounded-full transition-all duration-300 shadow-md shadow-sky-500/10 cursor-pointer"
           >
             <Download size={13} />
-            <span>{t("nav.download")}</span>
+            <span>{IS_APP_PUBLISHED ? t("nav.download") : t("beta.cta")}</span>
           </a>
         </div>
 
@@ -142,7 +143,7 @@ export default function Header() {
 
       {/* Mobile Nav Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[60px] z-40 bg-white/98 backdrop-blur-lg border-t border-gray-100 flex flex-col px-6 py-8 gap-6 animate-fade-in">
+        <div className="md:hidden fixed inset-0 top-[96px] sm:top-[100px] z-40 bg-white/98 backdrop-blur-lg border-t border-gray-100 flex flex-col px-6 py-8 gap-6 animate-fade-in">
           <a
             href="#features"
             onClick={() => setMobileMenuOpen(false)}
@@ -172,12 +173,12 @@ export default function Header() {
             {t("nav.faq")}
           </a>
           <a
-            href="#download"
+            href={IS_APP_PUBLISHED ? "#download" : TESTER_SIGNUP_URL}
             onClick={() => setMobileMenuOpen(false)}
             className="mt-4 flex items-center justify-center gap-2 w-full py-3.5 bg-[#208AEF] rounded-xl text-white font-semibold shadow-lg shadow-sky-500/10 hover:opacity-90 transition-opacity"
           >
             <Download size={18} />
-            {t("nav.download")}
+            {IS_APP_PUBLISHED ? t("nav.download") : t("beta.cta")}
           </a>
         </div>
       )}

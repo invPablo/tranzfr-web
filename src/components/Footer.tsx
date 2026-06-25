@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import { IS_APP_PUBLISHED, TESTER_SIGNUP_URL } from "@/constants/links";
 
 export default function Footer() {
   const { language, t } = useLanguage();
@@ -37,25 +38,38 @@ export default function Footer() {
               {language === "es" ? "¿Listo para tu próximo viaje?" : "Ready for your next trip?"}
             </h3>
             <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-xl leading-relaxed">
-              {language === "es"
-                ? "Descarga Tranzfr gratis ahora mismo en Google Play y despídete para siempre de las cuentas incómodas y los excels complejos."
-                : "Download Tranzfr for free right now on Google Play and say goodbye to awkward math and complex spreadsheets forever."}
+              {IS_APP_PUBLISHED
+                ? language === "es"
+                  ? "Descarga Tranzfr gratis ahora mismo en Google Play y despídete para siempre de las cuentas incómodas y los excels complejos."
+                  : "Download Tranzfr for free right now on Google Play and say goodbye to awkward math and complex spreadsheets forever."
+                : language === "es"
+                  ? "Estamos en fase beta cerrada. Únete como tester y prueba Tranzfr antes que nadie."
+                  : "We're in closed beta. Join as a tester and try Tranzfr before anyone else."}
             </p>
 
-            {/* Google Play Exclusivity badge */}
+            {/* Google Play badge (once published) / Beta Tester CTA (for now) */}
             <div className="flex justify-center mt-8">
-              <a
-                href="#download"
-                className="relative block w-52 h-[60px] transition-all hover:scale-[1.03] active:scale-[0.98] drop-shadow-sm cursor-pointer"
-              >
-                <Image
-                  src={badgeSrc}
-                  alt="Consíguelo en Google Play / Get it on Google Play"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </a>
+              {IS_APP_PUBLISHED ? (
+                <a
+                  href="#download"
+                  className="relative block w-52 h-[60px] transition-all hover:scale-[1.03] active:scale-[0.98] drop-shadow-sm cursor-pointer"
+                >
+                  <Image
+                    src={badgeSrc}
+                    alt="Consíguelo en Google Play / Get it on Google Play"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </a>
+              ) : (
+                <a
+                  href={TESTER_SIGNUP_URL}
+                  className="inline-flex items-center justify-center px-7 py-4 rounded-2xl bg-[#208AEF] hover:bg-[#1c7cd6] text-white font-bold text-sm shadow-lg shadow-sky-500/20 transition-all hover:scale-[1.03] active:scale-[0.98]"
+                >
+                  {language === "es" ? "Únete como tester →" : "Join as a tester →"}
+                </a>
+              )}
             </div>
           </div>
         </div>

@@ -1,5 +1,9 @@
 export const translations = {
   es: {
+    beta: {
+      message: "Estamos en fase beta",
+      cta: "Únete como tester →",
+    },
     nav: {
       features: "Características",
       simulator: "Simulador",
@@ -15,6 +19,7 @@ export const translations = {
       rating: "",
       reviews: "",
       compliance: "Solo disponible en Google Play para Android",
+      comingSoon: "Próximamente en Google Play para Android",
       mockup: {
         title: "Roadtrip Islandia 🇮🇸",
         members: "4 miembros • EUR",
@@ -141,12 +146,12 @@ export const translations = {
     faq: {
       title: "Preguntas Frecuentes",
       subtitle: "¿Tienes alguna duda sobre cómo funciona Tranzfr? Encuentra aquí las respuestas rápidas.",
-      q1: "¿Tengo que pagar por cada grupo que creo?",
-      a1: "La descarga de Tranzfr es completamente gratuita en Google Play. Puedes gestionar tu primer grupo de viaje sin coste alguno para probar todas las funciones básicas del sistema.",
+      q1: "¿Tengo que pagar por crear grupos?",
+      a1: "No, Tranzfr es completamente gratuita. Puedes crear y gestionar todos los grupos de viaje que quieras sin coste alguno.",
       q2: "¿Cómo funciona el algoritmo de simplificación de deudas?",
       a2: "Nuestra aplicación móvil utiliza un algoritmo optimizado ('greedy algorithm') que analiza todas las deudas cruzadas de los miembros y calcula el balance neto de cada uno. A partir de ahí, genera la menor cantidad de transacciones directas posibles para saldar el grupo.",
       q3: "¿Puedo añadir gastos si no tengo cobertura o conexión a internet?",
-      a3: "¡Sí, al 100%! Tranzfr es offline-aware. Puedes introducir deudas e importes en medio de la naturaleza sin problemas; la app guardará los datos a nivel de almacenamiento local de forma segura y los sincronizará tan pronto detecte conexión.",
+      a3: "Si te quedas sin conexión, Tranzfr te avisa de forma clara en el momento para que añadas el gasto en cuanto recuperes señal, en vez de fallar en silencio.",
       q4: "¿Cómo se invitan a otros miembros al grupo?",
       a4: "Puedes invitar a tus amigos introduciendo sus correos electrónicos para que se auto-vinculen en cuanto se registren en la app, o bien compartiendo un enlace directo de invitación que abrirá la aplicación móvil instantáneamente gracias al soporte de deep linking.",
       q5: "¿Solo está disponible para dispositivos Android?",
@@ -160,6 +165,10 @@ export const translations = {
     }
   },
   en: {
+    beta: {
+      message: "We're in beta",
+      cta: "Join as a tester →",
+    },
     nav: {
       features: "Features",
       simulator: "Simulator",
@@ -175,6 +184,7 @@ export const translations = {
       rating: "",
       reviews: "",
       compliance: "Exclusively available on Google Play for Android",
+      comingSoon: "Coming soon on Google Play for Android",
       mockup: {
         title: "Roadtrip Iceland 🇮🇸",
         members: "4 members • EUR",
@@ -301,12 +311,12 @@ export const translations = {
     faq: {
       title: "Frequently Asked Questions",
       subtitle: "Have questions about how Tranzfr works? Find quick answers here.",
-      q1: "Do I have to pay for each group I create?",
-      a1: "Downloading Tranzfr is completely free on Google Play. You can manage your first trip group at no cost to experience all the core features of the system.",
+      q1: "Do I have to pay to create groups?",
+      a1: "No, Tranzfr is completely free. You can create and manage as many trip groups as you want at no cost.",
       q2: "How does the debt simplification algorithm work?",
       a2: "Our mobile app utilizes an optimized greedy algorithm that analyzes everyone's debts and computes their net balances. It then generates the minimum amount of direct transactions needed to settle the group.",
       q3: "Can I log expenses if I don't have internet connection?",
-      a3: "Yes, 100%! Tranzfr is offline-aware. You can safely log debts and amounts in the wild; the app stores your data locally and synchronizes once connection is restored.",
+      a3: "If you lose connection, Tranzfr tells you right away so you can log the expense as soon as you're back online, instead of failing silently.",
       q4: "How do I invite other members to the group?",
       a4: "You can invite friends by entering their email address (so they auto-link upon registering), or by sharing a direct invitation link that opens the mobile app instantly using deep linking.",
       q5: "Is it only available for Android devices?",
