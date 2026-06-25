@@ -9,10 +9,23 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tranzfr.com"),
   title: "Tranzfr | Split Trip Expenses Without the Hassle",
   description: "Tranzfr is the mobile app for splitting trip expenses with friends. Flexible splitting, trip budgets, and automatic debt simplification.",
   icons: {
     icon: "/icon.png",
+  },
+  openGraph: {
+    title: "Tranzfr | Travel more. Worry less.",
+    description: "Split trip expenses with friends, instantly. Flexible splitting, trip budgets, and settling up made easy.",
+    url: "https://tranzfr.com",
+    siteName: "Tranzfr",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tranzfr | Travel more. Worry less.",
+    description: "Split trip expenses with friends, instantly.",
   },
 };
 
