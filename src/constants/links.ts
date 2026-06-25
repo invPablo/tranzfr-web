@@ -1,15 +1,8 @@
-// Single source of truth for the beta-tester signup destination. Swap this
-// to the real Play Console closed-testing opt-in URL
-// (play.google.com/apps/testing/com.northkraken.tranzfr) once it exists —
-// every CTA on the site reads from here, so one edit updates them all.
-// Subject line matches the page's current language rather than being
-// hardcoded, since the site toggles between Spanish and English.
-export function getTesterSignupUrl(language: "es" | "en") {
-  const subject =
-    language === "es" ? "Quiero ser tester de Tranzfr" : "I want to be a Tranzfr tester";
-  return `mailto:hello@tranzfr.com?subject=${encodeURIComponent(subject)}`;
-}
+// Single source of truth for the Play Store listing — every beta CTA and
+// "Get it on Google Play" button on the site reads from here.
+export const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.northkraken.tranzfr";
 
-// Flip to true once the app is live on Google Play, so all the "Get it on
-// Google Play" buttons switch back from the beta-tester CTA automatically.
+// Flip to true once the app is out of beta, so all the CTAs switch from the
+// beta-tester label to the regular "Get it on Google Play" badge.
 export const IS_APP_PUBLISHED = false;

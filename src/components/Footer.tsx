@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
-import { IS_APP_PUBLISHED, getTesterSignupUrl } from "@/constants/links";
+import { IS_APP_PUBLISHED, PLAY_STORE_URL } from "@/constants/links";
 
 export default function Footer() {
   const { language, t } = useLanguage();
@@ -64,10 +64,12 @@ export default function Footer() {
                 </a>
               ) : (
                 <a
-                  href={getTesterSignupUrl(language)}
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-7 py-4 rounded-2xl bg-[#208AEF] hover:bg-[#1c7cd6] text-white font-bold text-sm shadow-lg shadow-sky-500/20 transition-all hover:scale-[1.03] active:scale-[0.98]"
                 >
-                  {language === "es" ? "Únete como tester →" : "Join as a tester →"}
+                  {language === "es" ? "Descargar la beta →" : "Download the beta →"}
                 </a>
               )}
             </div>
