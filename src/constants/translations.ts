@@ -2,7 +2,7 @@ export const translations = {
   es: {
     beta: {
       message: "Estamos en fase beta",
-      cta: "Descargar la beta →",
+      cta: "Únete como tester →",
     },
     waitlist: {
       placeholder: "Tu email",
@@ -173,7 +173,7 @@ export const translations = {
   en: {
     beta: {
       message: "We're in beta",
-      cta: "Download the beta →",
+      cta: "Join as a tester →",
     },
     waitlist: {
       placeholder: "Your email",
