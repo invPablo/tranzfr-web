@@ -22,11 +22,19 @@ export const metadata: Metadata = {
     url: "https://www.tranzfr.com",
     siteName: "Tranzfr",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Tranzfr | Travel more. Worry less.",
     description: "Split trip expenses with friends, instantly.",
+    images: ["/og-image.png"],
   },
 };
 
