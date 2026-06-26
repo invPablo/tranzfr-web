@@ -4,6 +4,12 @@ export const translations = {
       message: "Estamos en fase beta",
       cta: "Únete como tester →",
     },
+    waitlist: {
+      placeholder: "Tu email",
+      submitting: "Enviando…",
+      success: "¡Listo! Te avisaremos en cuanto puedas entrar.",
+      error: "Introduce un email válido.",
+    },
     nav: {
       features: "Características",
       simulator: "Simulador",
@@ -168,6 +174,12 @@ export const translations = {
     beta: {
       message: "We're in beta",
       cta: "Join as a tester →",
+    },
+    waitlist: {
+      placeholder: "Your email",
+      submitting: "Sending…",
+      success: "Done! We'll let you know as soon as you can join.",
+      error: "Enter a valid email.",
     },
     nav: {
       features: "Features",

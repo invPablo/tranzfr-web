@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
-import { IS_APP_PUBLISHED, getTesterSignupUrl } from "@/constants/links";
+import { IS_APP_PUBLISHED } from "@/constants/links";
+import WaitlistForm from "@/components/WaitlistForm";
 
 export default function Footer() {
   const { language, t } = useLanguage();
@@ -63,12 +64,7 @@ export default function Footer() {
                   />
                 </a>
               ) : (
-                <a
-                  href={getTesterSignupUrl(language)}
-                  className="inline-flex items-center justify-center px-7 py-4 rounded-2xl bg-[#208AEF] hover:bg-[#1c7cd6] text-white font-bold text-sm shadow-lg shadow-sky-500/20 transition-all hover:scale-[1.03] active:scale-[0.98]"
-                >
-                  {language === "es" ? "Únete como tester →" : "Join as a tester →"}
-                </a>
+                <WaitlistForm />
               )}
             </div>
           </div>

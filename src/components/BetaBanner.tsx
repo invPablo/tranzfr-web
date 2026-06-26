@@ -1,10 +1,9 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { getTesterSignupUrl } from "@/constants/links";
 
 export default function BetaBanner() {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[60] h-9 sm:h-10 bg-gradient-to-r from-[#208AEF] via-sky-500 to-[#10b981] animate-gradient-shift">
@@ -17,7 +16,7 @@ export default function BetaBanner() {
           {t("beta.message")}
         </p>
         <a
-          href={getTesterSignupUrl(language)}
+          href="#waitlist"
           className="shrink-0 text-[11px] sm:text-xs font-extrabold text-white underline underline-offset-2 hover:opacity-80 transition-opacity"
         >
           {t("beta.cta")}
