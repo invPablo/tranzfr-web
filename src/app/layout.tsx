@@ -10,7 +10,7 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tranzfr.com"),
+  metadataBase: new URL("https://www.tranzfr.com"),
   title: "Tranzfr | Split Trip Expenses Without the Hassle",
   description: "Tranzfr is the mobile app for splitting trip expenses with friends. Flexible splitting, trip budgets, and automatic debt simplification.",
   icons: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tranzfr | Travel more. Worry less.",
     description: "Split trip expenses with friends, instantly. Flexible splitting, trip budgets, and settling up made easy.",
-    url: "https://tranzfr.com",
+    url: "https://www.tranzfr.com",
     siteName: "Tranzfr",
     type: "website",
   },
